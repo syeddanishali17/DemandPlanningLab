@@ -1,0 +1,6 @@
+metric,baseline,proposed
+fill_rate,0.927781064440501,0.958149827997984
+stockout_weeks,145.0,71.0
+average_inventory_units,4780.9375,6907.6875
+number_of_orders,592.0,129.0
+average_inventory_value,63090.9375,110962.75

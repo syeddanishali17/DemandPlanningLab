@@ -1,0 +1,19 @@
+[project]
+name = "demand-inventory-planner"
+version = "1.0.0"
+description = "Demand & inventory planning tool: forecast -> safety stock -> reorder point -> EOQ -> projection -> backtest"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
+ignore = ["E501"]

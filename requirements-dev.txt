@@ -1,0 +1,11 @@
+-r requirements.txt
+
+# Development / validation
+pytest>=8.0
+ruff>=0.6
+
+# Tests only: evaluates the exported workbook formulas without Excel
+pycel>=1.0b30
+
+# Optional, only for scripts/screenshots.py:
+# playwright>=1.45   (then: python -m playwright install chromium)

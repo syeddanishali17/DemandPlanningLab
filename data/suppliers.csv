@@ -1,0 +1,6 @@
+supplier_id,supplier_name,lead_time_weeks,ordering_cost_eur
+SUP-01,Rhein-Main Kitchenware GmbH,2,40
+SUP-02,Alpina Bath & Textile AG,3,45
+SUP-03,Baltic Linen Works UAB,4,55
+SUP-04,Pearl River Electrics Ltd,6,90
+SUP-05,CleanCare Distribution BV,1,35

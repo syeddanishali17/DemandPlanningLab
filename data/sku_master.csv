@@ -1,0 +1,49 @@
+sku,product_name,category,supplier_id,unit_cost_eur,case_pack,demand_pattern
+KIT-001,Chef's Knife 20cm,Kitchen,SUP-01,18,6,stable
+KIT-002,Non-Stick Frying Pan 28cm,Kitchen,SUP-01,22,4,variable
+KIT-003,Glass Food Storage Set 5pc,Kitchen,SUP-01,15,6,growing
+KIT-004,Bamboo Cutting Board,Kitchen,SUP-01,9,12,stable
+KIT-005,Stainless Saucepan 2L,Kitchen,SUP-01,28,4,declining
+KIT-006,Silicone Utensil Set,Kitchen,SUP-01,12,10,variable
+KIT-007,Cast Iron Casserole 5L,Kitchen,SUP-01,85,1,low
+KIT-008,Espresso Cup Set 6pc,Kitchen,SUP-01,19,6,stable
+KIT-009,Digital Kitchen Scale,Kitchen,SUP-01,24,5,growing
+KIT-010,Measuring Jug 1L,Kitchen,SUP-01,6,24,stable
+BTH-001,Bath Towel 70x140 Grey,Bathroom,SUP-02,11,10,stable
+BTH-002,Hand Towel 50x100 White,Bathroom,SUP-02,6,20,stable
+BTH-003,Cotton Bath Mat,Bathroom,SUP-02,14,8,variable
+BTH-004,Waterproof Shower Curtain,Bathroom,SUP-02,16,10,declining
+BTH-005,Waffle Bathrobe M,Bathroom,SUP-02,32,5,variable
+BTH-006,Ceramic Toothbrush Holder,Bathroom,SUP-02,16,12,stable
+BTH-007,Glass Soap Dispenser,Bathroom,SUP-02,12,12,growing
+BTH-008,Chrome Towel Rail,Bathroom,SUP-02,95,1,low
+BTH-009,Woven Laundry Basket,Bathroom,SUP-02,21,4,variable
+BTH-010,Microfibre Hair Towel,Bathroom,SUP-02,9,20,growing
+BED-001,All-Season Duvet 135x200,Bedding,SUP-03,45,4,stable
+BED-002,Pillow 80x80 Medium,Bedding,SUP-03,14,8,stable
+BED-003,Cotton Bed Linen Set Grey,Bedding,SUP-03,38,5,variable
+BED-004,Fitted Sheet 180x200,Bedding,SUP-03,19,10,growing
+BED-005,Weighted Blanket 7kg,Bedding,SUP-03,65,2,declining
+BED-006,Mattress Protector 160x200,Bedding,SUP-03,29,6,stable
+BED-007,Linen Throw Blanket,Bedding,SUP-03,34,5,variable
+BED-008,Silk Pillowcase,Bedding,SUP-03,72,2,low
+BED-009,Kids Bedding Set Stars,Bedding,SUP-03,30,4,declining
+ELE-001,Dimmable LED Desk Lamp,Small Electrics,SUP-04,27,6,stable
+ELE-002,Electric Kettle 1.7L,Small Electrics,SUP-04,31,4,variable
+ELE-003,Hand Blender 800W,Small Electrics,SUP-04,36,4,growing
+ELE-004,Smart Plug 2-Pack,Small Electrics,SUP-04,14,10,growing
+ELE-005,Mini Bluetooth Speaker,Small Electrics,SUP-04,23,6,declining
+ELE-006,USB-C Charging Hub,Small Electrics,SUP-04,17,10,stable
+ELE-007,Compact Air Purifier,Small Electrics,SUP-04,120,1,low
+ELE-008,Burr Coffee Grinder,Small Electrics,SUP-04,48,2,variable
+CLN-001,Dishwasher Tabs 60pc,Cleaning & Care,SUP-05,7,12,stable
+CLN-002,Microfibre Cloths 10-Pack,Cleaning & Care,SUP-05,5,20,stable
+CLN-003,Eco Laundry Detergent 2L,Cleaning & Care,SUP-05,9,6,growing
+CLN-004,Glass Cleaner Spray,Cleaning & Care,SUP-05,6,12,variable
+CLN-005,Bamboo Toilet Brush,Cleaning & Care,SUP-05,11,12,stable
+CLN-006,Reusable Mop Pads 3-Pack,Cleaning & Care,SUP-05,10,12,declining
+CLN-007,Kettle Descaler 500ml,Cleaning & Care,SUP-05,8,12,variable
+CLN-008,Lint Roller 3-Pack,Cleaning & Care,SUP-05,7,24,stable
+CLN-009,Stain Remover Pen,Cleaning & Care,SUP-05,13,24,growing
+CLN-010,Scrub Brush Set,Cleaning & Care,SUP-05,16,12,variable
+CLN-011,Oven Cleaner Gel,Cleaning & Care,SUP-05,14,12,stable
