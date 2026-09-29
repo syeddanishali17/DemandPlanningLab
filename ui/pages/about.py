@@ -7,6 +7,7 @@ from ui.state import current_plan
 
 AUTHOR = "Syed Danish Ali"
 LINKEDIN = "https://www.linkedin.com/in/syeddanishali16/"
+GITHUB = "https://github.com/syeddanishali17/DemandPlanningLab"
 
 result = current_plan()
 scenario = result.data.scenario
@@ -50,7 +51,10 @@ with c3:
         "fundamentals a demand or inventory planner uses every week, kept simple enough to explain end to end.</p>"
         f'<p style="margin-top:14px"><a class="dp-linkedin-light" href="{LINKEDIN}" target="_blank" rel="noopener" '
         'style="display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;background:#0A66C2;'
-        'color:#fff;font-weight:600;text-decoration:none">Connect on LinkedIn →</a></p></div>'
+        'color:#fff;font-weight:600;text-decoration:none">Connect on LinkedIn →</a> '
+        f'<a href="{GITHUB}" target="_blank" rel="noopener" '
+        'style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;margin-top:8px;'
+        'border:1px solid #D5D8E5;color:#111633;font-weight:600;text-decoration:none">Source code on GitHub</a></p></div>'
     )
 
 st.html(

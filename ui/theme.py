@@ -199,6 +199,13 @@ button[data-testid="stExpandSidebarButton"]:hover {{ transform: translateX(2px);
   min-height: 220px; border-radius: 12px; background: linear-gradient(90deg, #EEF0F7 25%, #F6F7FC 37%, #EEF0F7 63%);
   background-size: 400% 100%; animation: dp-shimmer 1.4s ease infinite; }}
 
+/* Tooltips always sit above cards and banners, with room to wrap. */
+[data-baseweb="tooltip"], [data-baseweb="popover"], [data-testid="stTooltipContent"] {{ z-index: 1000050 !important; }}
+[data-testid="stTooltipContent"], [data-testid="stDataFrameTooltipContent"] {{
+  height: auto !important; max-height: none !important; overflow: visible !important; max-width: 320px; white-space: normal; }}
+[data-testid="stTooltipContent"] p, [data-testid="stDataFrameTooltipContent"] p {{ line-height: 1.45 !important; margin: 0 !important; }}
+[data-testid="stTooltipContent"] > div, [data-testid="stDataFrameTooltipContent"] > div {{ margin-bottom: 0 !important; }}
+
 /* ======================================================================= hero banner */
 .dp-hero {{ position: relative; overflow: hidden; border-radius: 20px; padding: clamp(20px, 2.2vw, 30px) clamp(20px, 2.4vw, 34px); color: #fff;
   background: radial-gradient(120% 140% at 100% 0%, rgba(6, 182, 212, 0.28) 0%, rgba(6, 182, 212, 0) 45%),

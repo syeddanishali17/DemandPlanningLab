@@ -48,7 +48,7 @@ with f2:
 with f3:
     suppliers = st.multiselect("Supplier", sorted(plan["supplier_id"].unique()), placeholder="All suppliers")
 with f4:
-    search = st.text_input("Search", placeholder="SKU or product name", icon=":material/search:")
+    search = st.text_input("Search", placeholder="SKU or product", icon=":material/search:")
 
 view = plan[plan["status"].isin(statuses)]
 if categories:
@@ -117,8 +117,10 @@ COLUMNS = {
         "Order units", format="%d", help="EOQ rounded up to the case pack, if the reorder point is reached."
     ),
     "recommended_order_value": st.column_config.NumberColumn("Order value", format="euro"),
-    "arrives": st.column_config.DateColumn(
-        "Arrives", format="DD MMM", help="Receipt date of today's order (lead time + 1 week)."
+    "arrives": st.column_config.TextColumn(
+        "Arrives",
+        width=75,
+        help="Receipt date of today's order (lead time + 1 week). — = no order this week.",
     ),
     "reason": st.column_config.TextColumn("Reason", width="large"),
     "supplier_name": st.column_config.TextColumn("Supplier", width="medium"),
@@ -153,7 +155,8 @@ display = view.assign(
     wape_pct=view["wape"] * 100,
     bias_pct=view["bias"] * 100,
     arrives=[
-        pd.Timestamp(scenario.week_start(int(w))) if w > 0 else pd.NaT for w in view["new_order_receipt_week"]
+        scenario.week_start(int(w)).strftime("%d %b") if w > 0 else "—"
+        for w in view["new_order_receipt_week"]
     ],
 )
 table = display[list(COLUMNS)]
@@ -233,7 +236,8 @@ if current in skus_in_view:
 # ---------------------------------------------------------------- downloads: scope is always explicit
 section(
     "Export",
-    sub="Order proposals list only SKUs with an order this week. The filtered export follows the filters above.",
+    sub="<b>Filtered orders</b>: only the orders visible with the filters above. <b>All orders</b>: every order this week, "
+    "ignoring the filters. <b>Full plan</b>: every column for all SKUs. Order files list only SKUs with an order this week.",
 )
 EXPORT_COLS = [
     "sku",
@@ -274,7 +278,6 @@ with d1:
         type="primary",
         use_container_width=True,
         disabled=orders.empty,
-        help="Only the orders visible with the current filters.",
     )
 with d2:
     st.download_button(
@@ -284,7 +287,6 @@ with d2:
         mime="text/csv",
         icon=":material/download:",
         use_container_width=True,
-        help="Every order this week, ignoring the filters.",
     )
 with d3:
     st.download_button(
@@ -294,7 +296,6 @@ with d3:
         mime="text/csv",
         icon=":material/table_view:",
         use_container_width=True,
-        help="Every column of the plan for every SKU.",
     )
 
 callout(

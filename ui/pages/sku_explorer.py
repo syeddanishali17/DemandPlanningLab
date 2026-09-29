@@ -75,7 +75,8 @@ if selected in skus_by_urgency:
     with info:
         st.caption(
             f"SKU {idx + 1} of {len(skus_by_urgency)}, ordered by urgency. The Story tab explains the decision in plain English; "
-            "the other tabs show the evidence."
+            "the other tabs show the evidence. **Excel workbook**: this SKU's full calculation with live formulas and a "
+            "check sheet against the app."
         )
     with export:
         st.download_button(
@@ -86,7 +87,6 @@ if selected in skus_by_urgency:
             icon=":material/download:",
             use_container_width=True,
             key=f"xlsx_{selected}",
-            help="This SKU's full calculation as a live-formula Excel workbook, with a check sheet against the app.",
         )
     tabs = st.tabs(["Story", "Demand & forecast", "Inventory & orders", "Calculations", "Backtest"])
     with tabs[0]:

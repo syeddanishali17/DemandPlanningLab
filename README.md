@@ -2,6 +2,9 @@
 
 **A weekly replenishment planning tool: which products need attention, when to reorder them, and roughly how much to order.**
 
+**Live app: [demandplanninglab.streamlit.app](https://demandplanninglab.streamlit.app/)**
+(Streamlit Community Cloud; the first visit after a quiet spell can take ~30 s while the app wakes up.)
+
 Built for a fictitious home & living e-tailer with 48 SKUs, one warehouse, 5 suppliers and 104 weeks of weekly demand.
 The planning logic was first prototyped and hand-checked in Excel, then implemented in Python and validated against the workbook
 for every SKU. Streamlit front end, Plotly charts, no database, no API.
@@ -13,6 +16,17 @@ for every SKU. Streamlit front end, Plotly charts, no database, no API.
 ![Dashboard](docs/screenshots/dashboard.png)
 
 ---
+
+## A two-minute tour
+
+1. **Dashboard**: the week at a glance: stockout risks, orders to place, inventory value, forecast accuracy, backtest result.
+2. **SKU Explorer**: pick a SKU from the list and read its story from demand history to this week's decision.
+   The *Excel workbook* button downloads that SKU's full calculation with live formulas.
+3. **Replenishment Plan**: every SKU, decision first, with filters and CSV exports (filtered orders, all orders, full plan).
+4. **Supplier View**: this week's purchase-order draft per supplier.
+5. **Policy Backtest**: does the policy beat a simple four-weeks-of-stock rule? Honest trade-offs.
+6. Move the **target service level** slider in the sidebar and watch safety stock, reorder points, orders and the
+   backtest recalculate.
 
 ## What it does
 
@@ -124,17 +138,21 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Python 3.11+. Change the target service level, holding rate or excess threshold in the sidebar and every page, including
-the backtest, recalculates.
+Python 3.11+ (tested on 3.12 with Streamlit 1.62 and 1.64). Change the target service level, holding rate or excess
+threshold in the sidebar and every page, including the backtest, recalculates.
 
-## Deploy
+On Windows PowerShell, the same commands work; use `py -m pip` / `py -m streamlit run app.py` if `pip` or `streamlit`
+is not on the PATH.
 
-The app is a single Streamlit process with the CSVs in `data/`. No database or secrets.
+## Deployment
 
-- **Streamlit Cloud:** connect the GitHub repo, set the main file to `app.py`, Python 3.12 (`runtime.txt`).
-- **Render:** Web Service, start command `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`.
+The live app runs on **Streamlit Community Cloud** from the `main` branch of this repository: every `git push` to `main`
+redeploys it automatically. It is a single Streamlit process with the CSVs in `data/`: no database, no secrets.
 
-Install only `requirements.txt` on the host (`requirements-dev.txt` is for CI and local tests).
+- **Streamlit Community Cloud:** main file `app.py`, Python 3.12, dependencies from `requirements.txt`.
+- **Render (alternative):** Web Service, start command `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`.
+
+Install only `requirements.txt` on the host (`requirements-dev.txt` is for local tests and linting).
 
 ## Project structure
 
@@ -169,4 +187,4 @@ Released under the [MIT License](LICENSE).
 
 ---
 
-A portfolio project built by **Syed Danish Ali** · [LinkedIn](https://www.linkedin.com/in/syeddanishali16/)
+A portfolio project built by **Syed Danish Ali** · [Live app](https://demandplanninglab.streamlit.app/) · [LinkedIn](https://www.linkedin.com/in/syeddanishali16/)

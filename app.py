@@ -52,7 +52,7 @@ navigation = st.navigation(PAGES, position="hidden")
 with st.sidebar:
     st.html(
         f'<div class="dp-brand">{BRAND_MARK}<div><div class="dp-brand-name">Demand &amp; Inventory<br>Planner</div>'
-        '<div class="dp-brand-sub">Forecast · Safety stock · Reorder · EOQ</div></div></div>'
+        '<div class="dp-brand-sub">Forecast · Reorder · EOQ</div></div></div>'
     )
     for group, pages in PAGES.items():
         st.html(f'<div class="dp-nav-group">{group}</div>')
